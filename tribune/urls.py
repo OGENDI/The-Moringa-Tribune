@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import news.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('news/', news.views.welcome, name='welcome'),
+    path('', news.views.news_of_day, name='time_news'),
 ]
